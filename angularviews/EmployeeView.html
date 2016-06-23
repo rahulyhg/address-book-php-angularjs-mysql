@@ -1,0 +1,70 @@
+<div class="maximus">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                <span class="panel-icon fa fa-2x fa-file"></span>
+                <h2 class="panel-title">{{'Employee'| translate}}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                      <li ng-click="deleteEmployee(Employee)><a class="close-link">
+                <i class="fa fa-trash-o"></i>       
+            </a>
+                      </li>
+                      <!--li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <!--li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li-->
+                         <li><a class="collapse-link"><i class="fa fa-expand"></i></a>
+                      </li>
+                        <li><a class="close-link"><i class="fa fa-compress" style="display: none"></i></a>
+                      </li>
+                       <li ng-click="calcleAdd()"><a class="collapse-link"><i class="fa fa-times cancleadd"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+            </div>
+
+                <ng-include src="'angularviews/navigation/Employee-tabs.html'"></ng-include>
+          
+                    <form  name = "EmployeeForm" > 
+ 
+                     <p ng-show="noDataFound" class="alert alert-info text-center">{{'NO_DATA_FOUND'| translate}}</p>
+            
+                     <div ng-hide="noDataFound" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 time-entry">
+               
+                       
+		
+<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{'FIRST_NAME' | translate }}
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{Employee.firstname}}
+		</div><div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{'LAST_NAME' | translate }}
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{Employee.lastname}}
+		</div><div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{'ADDRESS' | translate }}
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{Employee.addr}}
+		</div><div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{'ACCOUNT_NUMBER' | translate }}
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{Employee.accountno}}
+		</div><div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{'AGE' | translate }}
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{Employee.age}}
+		</div><div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{'EMAIL_ADDRESS' | translate }}
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">{{Employee.email}}
+		</div>
+
+                        </div>
+                        
+ 
+                    </form>     
+            </div>
+        </div>
+    </div>
+

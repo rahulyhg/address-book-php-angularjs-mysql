@@ -1,0 +1,123 @@
+<div class="maximus">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                <span class="panel-icon fa fa-2x fa-file"></span>
+                <h2 ng-hide="Employee.update" class="panel-title">{{'ADD'| translate}} {{'Employee'| translate}}</h2>
+                <h2 ng-show="Employee.update" class="panel-title">{{'UPDATE'| translate}} {{'Employee'| translate}}</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                      <!--li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <!--li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li-->
+                         
+                       
+                       <li class="pull-right" ng-click="cancel()"><a class="collapse-link"><i class="fa fa-times cancleadd"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+            </div>
+          
+                    <form  name = "EmployeeForm" > 
+ 
+		
+<div class="row form-group"> 
+<div class="col-md-6">
+<div style="margin-top: 15px;" class="input-group">
+<span class="input-group-addon"><i class="fa fa-cog"></i></span>
+<input name="firstname" ng-model="Employee.firstname" type="text" class="form-control" name="firstname" placeholder="First Name" ng-pattern='/^[a-zA-Z\s]{5,50}$/' required /> 
+</div>
+ 
+<div class="angError" ng-show="EmployeeForm.firstname.$dirty && EmployeeForm.firstname.$error.required">
+                                    {{'REQUIRED'| translate}}</div>
+                                <div class="angError" ng-show="EmployeeForm.firstname.$dirty && EmployeeForm.firstname.$invalid">
+                                    {{'INVALID'| translate}}</div>
+</div>
+<div class="col-md-6">
+<div style="margin-top: 15px;" class="input-group">
+<span class="input-group-addon"><i class="fa fa-cog"></i></span>
+<input name="lastname" ng-model="Employee.lastname" type="text" class="form-control" name="lastname" placeholder="Last Name" ng-pattern='/^[a-zA-Z\s]{5,50}$/' required /> 
+</div>
+ 
+<div class="angError" ng-show="EmployeeForm.lastname.$dirty && EmployeeForm.lastname.$error.required">
+                                    {{'REQUIRED'| translate}}</div>
+                                <div class="angError" ng-show="EmployeeForm.lastname.$dirty && EmployeeForm.lastname.$invalid">
+                                    {{'INVALID'| translate}}</div>
+</div>
+</div>
+<div class="row form-group"> 
+<div class="col-md-12">
+<div style="margin-top: 15px;" class="input-group">
+<span class="input-group-addon"><i class="fa fa-cog"></i></span>
+<textarea name="addr" ng-model="Employee.addr"  class="form-control" name="addr" placeholder="Address" ng-pattern='/^[a-zA-Z0-9\s]{10,150}$/' required>
+</textarea> 
+</div>
+ 
+<div class="angError" ng-show="EmployeeForm.addr.$dirty && EmployeeForm.addr.$error.required">
+                                    {{'REQUIRED'| translate}}</div>
+                                <div class="angError" ng-show="EmployeeForm.addr.$dirty && EmployeeForm.addr.$invalid">
+                                    {{'INVALID'| translate}}</div>
+</div>
+</div>
+<div class="row form-group"> 
+<div class="col-md-12">
+<div style="margin-top: 15px;" class="input-group">
+<span class="input-group-addon"><i class="fa fa-cog"></i></span>
+<input name="accountno" ng-model="Employee.accountno" type="password" class="form-control" name="accountno" placeholder="Account Number" ng-pattern='/^[0-9]{10,10}$/' required /> 
+</div>
+ 
+<div class="angError" ng-show="EmployeeForm.accountno.$dirty && EmployeeForm.accountno.$error.required">
+                                    {{'REQUIRED'| translate}}</div>
+                                <div class="angError" ng-show="EmployeeForm.accountno.$dirty && EmployeeForm.accountno.$invalid">
+                                    {{'INVALID'| translate}}</div>
+</div>
+</div>
+<div class="row form-group"> 
+<div class="col-md-6">
+<div style="margin-top: 15px;" class="input-group">
+<span class="input-group-addon"><i class="fa fa-cog"></i></span>
+<input name="age" ng-model="Employee.age" type="number" class="form-control" name="age" placeholder="Age" ng-pattern='/^[0-9]{1,2}$/' required /> 
+</div>
+ 
+<div class="angError" ng-show="EmployeeForm.age.$dirty && EmployeeForm.age.$error.required">
+                                    {{'REQUIRED'| translate}}</div>
+                                <div class="angError" ng-show="EmployeeForm.age.$dirty && EmployeeForm.age.$invalid">
+                                    {{'INVALID'| translate}}</div>
+</div>
+<div class="col-md-6">
+<div style="margin-top: 15px;" class="input-group">
+<span class="input-group-addon"><i class="fa fa-cog"></i></span>
+<input name="email" ng-model="Employee.email" type="email" class="form-control" name="email" placeholder="Email Address" ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' required /> 
+</div>
+ 
+<div class="angError" ng-show="EmployeeForm.email.$dirty && EmployeeForm.email.$error.required">
+                                    {{'REQUIRED'| translate}}</div>
+                                <div class="angError" ng-show="EmployeeForm.email.$dirty && EmployeeForm.email.$invalid">
+                                    {{'INVALID'| translate}}</div>
+</div>
+</div>
+
+                                            
+                            <div style="margin-top:15px; margin-bottom: 0px" class="form-group">
+                                 <div ng-hide="popup" class="col-sm-2 controls padding-10 pull-right" style="margin-top: 15px">
+                                    <a id="btn-canclesaveEmployee" class="btn btn-dark" ng-click="cancel()">{{'Back'| translate}}</a>
+                                </div>
+                            </div>
+                                <div class="col-sm-2 controls padding-10 pull-right" style="margin-top: 15px">
+                                    <input type="button" ng-hide="Employee.update" id="btn-saveEmployee" class="btn btn-success" ng-click="saveEmployee()" ng-disabled="EmployeeForm.$invalid" value="{{'SAVE'| translate}}">
+                                    <input type="button" ng-show="Employee.update" id="btn-updateEmployee" class="btn btn-primary" ng-click="updateEmployee(Employee)" ng-disabled="EmployeeForm.$invalid" value="{{'UPDATE'| translate}}">
+                                </div>
+                            </div>
+ 
+                    </form>     
+            </div>
+        </div>
+    </div>
+
